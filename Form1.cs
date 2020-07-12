@@ -26,6 +26,27 @@ namespace Memory_Game_1
             AssignIconsToSquares();
         }
 
+        private void label_Click(object sender, EventArgs e)
+        {
+            Label clickedLabel = sender as Label;
+
+            if (clickedLabel == null)
+                return;
+
+            if (clickedLabel.ForeColor == Color.Black)
+                return;
+
+            if (firstClicked == null)
+            {
+                firstClicked = clickedLabel;
+                firstClicked.ForeColor = Color.Black;
+                return;
+            }
+
+            secondClicked = clickedLabel;
+            secondClicked.ForeColor = Color.Black;
+        }
+
         private void AssignIconsToSquares()
         {
             Label label;
