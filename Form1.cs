@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Memory_Game_1
-{
+{ 
     public partial class Form1 : Form
     {
         Random random = new Random();
@@ -27,7 +27,9 @@ namespace Memory_Game_1
         }
 
         private void label_Click(object sender, EventArgs e)
+
         {
+
             if (firstClicked != null && secondClicked != null)
                 return;
 
@@ -49,9 +51,31 @@ namespace Memory_Game_1
             secondClicked = clickedLabel;
             secondClicked.ForeColor = Color.Black;
 
-            timer1.Start();
+            CheckForWinner();
+
+            if (firstClicked.Text == secondClicked.Text)
+            {
+                firstClicked = null;
+                secondClicked = null;       
+            }
+            else 
+                timer1.Start();
         }
 
+        private void CheckForWinner()
+        {
+            Label label;
+            for (int i = 0; i < tableLayoutPanel1.Controls.Count; i++)
+            {
+                label = tableLayoutPanel1.Controls[i] as Label;
+
+                if (label != null && label.ForeColor == label.BackColor)
+                    return;
+            }
+
+            MessageBox.Show("Gratulacje! Udało Ci się odkryć wszystkie obrazki. :)");
+            Close();
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();

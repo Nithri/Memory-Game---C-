@@ -8,3 +8,4 @@ C:\Users\Karolina\Desktop\C#\Memory Game 1\obj\Debug\Memory Game 1.csproj.Genera
 C:\Users\Karolina\Desktop\C#\Memory Game 1\obj\Debug\Memory Game 1.csproj.CoreCompileInputs.cache
 C:\Users\Karolina\Desktop\C#\Memory Game 1\obj\Debug\Memory Game 1.exe
 C:\Users\Karolina\Desktop\C#\Memory Game 1\obj\Debug\Memory Game 1.pdb
+C:\Users\Karolina\Desktop\C#\Memory Game 1\obj\Debug\Memory_Game_1.Form2.resources
