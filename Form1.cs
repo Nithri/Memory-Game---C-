@@ -18,9 +18,31 @@ namespace Memory_Game_1
         {
             "J","J","P","P","M","M","E","E","j","j","o","o","b","b","v","v"
         };
+
+        Label firstClicked, secondClicked;
         public Form1()
         {
             InitializeComponent();
+            AssignIconsToSquares();
+        }
+
+        private void AssignIconsToSquares()
+        {
+            Label label;
+            int randomNumber;
+
+            for (int i = 0; i <tableLayoutPanel1.Controls.Count; i++)
+            {
+                if (tableLayoutPanel1.Controls[i] is Label)
+                    label = (Label)tableLayoutPanel1.Controls[i];
+                else
+                    continue;
+
+                randomNumber = random.Next(0, icons.Count);
+                label.Text = icons[randomNumber];
+
+                icons.RemoveAt(randomNumber);
+            }
         }
     }
 }
